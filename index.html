@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kauhasen laskin</title>
+  </head>
+  <body>
+
+
+<div id = "rect"></div>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+<script type="text/babel">
+class NumberPanel extends React.Component {
+
+    
+    render() {
+      
+      let str1 = '';
+      let buttonWidth = 80;
+      let buttonHeight = 80;
+    
+      function c1(){
+        console.log("1");
+        str1 +='1';
+      }
+      function c2(){
+        console.log("2");
+        str1 +='2';
+      }
+      function c3(){
+        console.log("3");
+        str1 +='3';
+      }
+      function c4(){
+        console.log("4");
+        str1 +='4';
+      }
+      function c5(){
+        console.log("5");
+        str1 +='5';
+      }
+      function c6(){
+        console.log("6");
+        str1 +='6';
+      }
+      function c7(){
+        console.log("7");
+        str1 +='7';
+      }
+      function c8(){
+        console.log("8");
+        str1 +='8';
+      }
+      function c9(){
+        console.log("9");
+        str1 +='9';
+      }
+      function c0(){
+        console.log("0");
+        str1 += '0';
+      }
+        return (
+        
+        <div>
+        {/* buttons 7-9 */}
+        <button onClick={c7} style={{height: buttonHeight, width: buttonWidth}}>7</button>
+        <button onClick={c8} style={{height: buttonHeight, width: buttonHeight}}>8</button>
+        <button onClick={c9} style={{height: buttonHeight, width: buttonHeight}}>9</button>
+        <button style={{height: buttonHeight, width: buttonHeight}}>CE</button><br/>
+        
+        {/* buttons 4-6 */}
+        <button onClick={c4} style={{height: buttonHeight, width: buttonHeight}}>4</button>
+        <button onClick={c5} style={{height: buttonHeight, width: buttonHeight}}>5</button>
+        <button onClick={c6} style={{height: buttonHeight, width: buttonHeight}}>6</button>
+        <button style={{height: buttonHeight, width: buttonHeight}}>+</button><br/>
+        
+        {/* buttons 1-3 */}
+        <button onClick={c1} style={{height: buttonHeight, width: buttonHeight}}>1</button>
+        <button onClick={c2} style={{height: buttonHeight, width: buttonHeight}}>2</button>
+        <button onClick={c3} style={{height: buttonHeight, width: buttonHeight}}>3</button>
+        <button style={{height: buttonHeight, width: buttonHeight}}>-</button><br/>
+        
+        {/* buttons *, 0, / */}
+        <button style={{height: buttonHeight, width: buttonHeight}}>*</button>
+        <button onClick={c0} style={{height: buttonHeight, width: buttonHeight}}>0</button>
+        <button style={{height: buttonHeight, width: buttonHeight}}>/</button>
+        <button style={{height: buttonHeight, width: buttonHeight}}>=</button><br/>
+        <p>{str1}</p>
+        
+
+        </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <NumberPanel />,document.getElementById('root')
+);
+</script>
+
+<script type="text/babel">
+  class DisplayRectangle extends React.Component{
+  
+  render(){
+  
+    
+    return(
+    <div>
+       <svg width="340" height="110">
+        <rect width="320" height="100"/>
+      </svg>
+    </div>
+      );
+    
+    }  
+  }
+  
+    ReactDOM.render(<DisplayRectangle/>, document.getElementById('rect'));
+</script>
+
+  </body>
+</html>
