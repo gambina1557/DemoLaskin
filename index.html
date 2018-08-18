@@ -202,12 +202,15 @@ class NumberPanel extends React.Component {
 
 
       function CE(){
+        let ta = document.getElementById("outputtext");
+        ta.innerHTML= 0;
+      }
+      
+      function ClearOutput(){
         str1 = '';
         str2 = '';
         console.log("Str1 cleared " + str1);
         activeStr = "str_1";
-        
-        
       }
       
       function equals(){
@@ -226,7 +229,7 @@ class NumberPanel extends React.Component {
               str1 = '';
               str2 = '';
               minusButtonPushed = 0;
-              CE();
+              ClearOutput();
         }
         
         if(plusButtonPushed){
@@ -239,7 +242,7 @@ class NumberPanel extends React.Component {
             str1 = '';
             str2 = '';
             plusButtonPushed = 0;
-            CE();
+            ClearOutput();
         }
         
         if(timesButtonPushed){
@@ -252,14 +255,14 @@ class NumberPanel extends React.Component {
           str1 = '';
           str2 = '';
           timesButtonPushed = 0;
-          CE();
+          ClearOutput();
         }
         
         if(dividerButtonPushed){
           
           if(int_2 === 0){
             alert("Ei kovin mielellään");
-            CE();
+            ClearOutput();
             
             let ta = document.getElementById("outputtext");
             ta.innerHTML= "Math error";
@@ -275,7 +278,7 @@ class NumberPanel extends React.Component {
             str2 = '';
           }
           dividerButtonPushed = 0;
-          CE();
+          ClearOutput();
         }
         }
         
