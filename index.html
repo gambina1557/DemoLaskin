@@ -2,93 +2,346 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>©gambina1557</title>
+    <title>Kauhasen laskin</title>
   </head>
   <body>
 
-
+<!-- Display elements:  rect as the output display, root as the number panel container-->
+<!--div id = "rect"></div-->
 <div id = "rect"></div>
 <div id="root"></div>
+
+<!-- react, react-dom and in-browser babel interpreter-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
 
+<!-- first script: creating the number panel && math operations-->
 <script type="text/babel">
 class NumberPanel extends React.Component {
 
     
     render() {
       
+      //strings for collecting the input data
       let str1 = '';
+      let str2 = '';
+      
+      let activeStr = "str_1";
+      
       let buttonWidth = 80;
       let buttonHeight = 80;
+      
+      let minusButtonPushed;
+      let plusButtonPushed;
+      let timesButtonPushed;
+      let dividerButtonPushed;
+      let equButtonPushed;
     
       function c1(){
-        console.log("1");
-        str1 +='1';
+        if(activeStr == "str_1"){
+          str1 +='1';
+          console.log(str1);
+          
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+          
+          }
+          else{
+            str2+= '1';
+            console.log(str2);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str2;
+        }
+        
       }
-      function c2(){
-        console.log("2");
-        str1 +='2';
+      
+        function c2(){
+          if(activeStr == "str_1"){
+            str1 +='2';
+            console.log(str1);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str1;
+          }
+          else{
+            str2+= '2';
+            console.log(str2);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str2;
+          }
+        
       }
-      function c3(){
-        console.log("3");
-        str1 +='3';
+      
+        function c3(){
+          if(activeStr == "str_1"){
+            str1 +='3';
+            console.log(str1);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str1;
+          }
+          else{
+            str2+= '3';
+            console.log(str2);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str2;
+          }
+        
       }
-      function c4(){
-        console.log("4");
-        str1 +='4';
+      
+        function c4(){
+          if(activeStr == "str_1"){
+            str1 +='4';
+            console.log(str1);
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= str1;
+          }
+        else{
+          str2+= '4';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c5(){
-        console.log("5");
-        str1 +='5';
+        if(activeStr == "str_1"){
+          str1 +='5';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '5';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c6(){
-        console.log("6");
-        str1 +='6';
+        if(activeStr == "str_1"){
+          str1 +='6';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '6';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c7(){
-        console.log("7");
-        str1 +='7';
+        if(activeStr == "str_1"){
+          str1 +='7';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '7';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c8(){
-        console.log("8");
-        str1 +='8';
+        if(activeStr == "str_1"){
+          str1 +='8';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '8';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c9(){
-        console.log("9");
-        str1 +='9';
+        if(activeStr == "str_1"){
+          str1 +='9';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '9';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+      
       function c0(){
-        console.log("0");
-        str1 += '0';
+        if(activeStr == "str_1"){
+          str1 +='0';
+          console.log(str1);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str1;
+        }
+        else{
+          str2+= '0';
+          console.log(str2);
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= str2;
+        }
+        
       }
+
+
+      function CE(){
+        str1 = '';
+        str2 = '';
+        console.log("Str1 cleared " + str1);
+        activeStr = "str_1";
+        
+        
+      }
+      
+      function equals(){
+        
+        let int_1 = parseInt(str1);
+        let int_2 = parseInt(str2);
+        let res = 0;
+        
+        if(minusButtonPushed){
+              res = int_1 - int_2;
+              console.log(res);
+              
+              let ta = document.getElementById("outputtext");
+              ta.innerHTML= res;
+              
+              str1 = '';
+              str2 = '';
+              minusButtonPushed = 0;
+              CE();
+        }
+        
+        if(plusButtonPushed){
+            res = int_1 + int_2;
+            console.log(res);
+            
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= res;
+            
+            str1 = '';
+            str2 = '';
+            plusButtonPushed = 0;
+            CE();
+        }
+        
+        if(timesButtonPushed){
+          res = int_1 * int_2;
+          console.log(res);
+          
+          let ta = document.getElementById("outputtext");
+          ta.innerHTML= res;
+          
+          str1 = '';
+          str2 = '';
+          timesButtonPushed = 0;
+          CE();
+        }
+        
+        if(dividerButtonPushed){
+          
+          if(int_2 === 0){
+            alert("Ei kovin mielellään");
+            CE();
+            
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= "Math error";
+            return;
+          }
+          else{
+            res = int_1 / int_2;
+            console.log(res);
+            
+            let ta = document.getElementById("outputtext");
+            ta.innerHTML= res;
+            str1 = '';
+            str2 = '';
+          }
+          dividerButtonPushed = 0;
+          CE();
+        }
+        }
+        
+        function plus(){
+          plusButtonPushed = 1;
+          minusButtonPushed = 0;
+          timesButtonPushed = 0;
+          dividerButtonPushed = 0;
+          
+          activeStr = "str2";
+        }
+        
+        function minus(){
+          plusButtonPushed = 0;
+          minusButtonPushed = 1;
+          timesButtonPushed = 0;
+          dividerButtonPushed = 0;
+          
+          activeStr = "str2";
+        }
+        
+      function times(){
+          plusButtonPushed = 0;
+          minusButtonPushed = 0;
+          timesButtonPushed = 1;
+          dividerButtonPushed = 0;
+          
+          activeStr = "str2";
+        }
+      
+      function divide(){
+          plusButtonPushed = 0;
+          minusButtonPushed = 0;
+          timesButtonPushed = 0;
+          dividerButtonPushed = 1;
+          
+          activeStr = "str2";
+        }
+        
+      
         return (
         
         <div>
         {/* buttons 7-9 */}
-        <button onClick={c7} style={{height: buttonHeight, width: buttonWidth}}>7</button>
-        <button onClick={c8} style={{height: buttonHeight, width: buttonHeight}}>8</button>
-        <button onClick={c9} style={{height: buttonHeight, width: buttonHeight}}>9</button>
-        <button style={{height: buttonHeight, width: buttonHeight}}>CE</button><br/>
+        <button onClick={c7} style={{height: buttonHeight, width: buttonWidth, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>7</button>
+        <button onClick={c8} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>8</button>
+        <button onClick={c9} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>9</button>
+        <button onClick = {CE} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>CE</button><br/>
         
         {/* buttons 4-6 */}
-        <button onClick={c4} style={{height: buttonHeight, width: buttonHeight}}>4</button>
-        <button onClick={c5} style={{height: buttonHeight, width: buttonHeight}}>5</button>
-        <button onClick={c6} style={{height: buttonHeight, width: buttonHeight}}>6</button>
-        <button style={{height: buttonHeight, width: buttonHeight}}>+</button><br/>
+        <button onClick={c4} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>4</button>
+        <button onClick={c5} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>5</button>
+        <button onClick={c6} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>6</button>
+        <button onClick={plus} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>+</button><br/>
         
         {/* buttons 1-3 */}
-        <button onClick={c1} style={{height: buttonHeight, width: buttonHeight}}>1</button>
-        <button onClick={c2} style={{height: buttonHeight, width: buttonHeight}}>2</button>
-        <button onClick={c3} style={{height: buttonHeight, width: buttonHeight}}>3</button>
-        <button style={{height: buttonHeight, width: buttonHeight}}>-</button><br/>
+        <button onClick={c1} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>1</button>
+        <button onClick={c2} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>2</button>
+        <button onClick={c3} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>3</button>
+        <button onClick={minus} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 1200, backgroundColor: 'silver'}}>-</button><br/>
         
         {/* buttons *, 0, / */}
-        <button style={{height: buttonHeight, width: buttonHeight}}>*</button>
-        <button onClick={c0} style={{height: buttonHeight, width: buttonHeight}}>0</button>
-        <button style={{height: buttonHeight, width: buttonHeight}}>/</button>
-        <button style={{height: buttonHeight, width: buttonHeight}}>=</button><br/>
+        <button onClick={times} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>*</button>
+        <button onClick={c0} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>0</button>
+        <button onClick={divide} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>/</button>
+        <button onClick = {equals} style={{height: buttonHeight, width: buttonHeight, borderRadius: '4px', fontWeight: 'bold', backgroundColor: 'silver'}}>=</button><br/>
         <p>{str1}</p>
         
 
@@ -102,6 +355,7 @@ ReactDOM.render(
 );
 </script>
 
+<!-- Second script: creating the display rectangle -->
 <script type="text/babel">
   class DisplayRectangle extends React.Component{
   
@@ -111,7 +365,9 @@ ReactDOM.render(
     return(
     <div>
        <svg width="340" height="110">
-        <rect width="320" height="100"/>
+        <rect id ="output"  width="320" height="110" style={{fill: 'blue'}}>
+        </rect>
+        <text id = "outputtext" x="20" y="100" fontFamily="Arial" fontSize="20" fill="white" ></text>
       </svg>
     </div>
       );
