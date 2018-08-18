@@ -38,20 +38,22 @@ class NumberPanel extends React.Component {
       let dividerButtonPushed;
       let equButtonPushed;
     
+    
+    
+      function updateDisp(input){
+        let ta = document.getElementById("outputtext");
+        ta.innerHTML = input;
+      }
+      
       function c1(){
         if(activeStr == "str_1"){
           str1 +='1';
-          console.log(str1);
-          
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
           
           }
           else{
             str2+= '1';
-            console.log(str2);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str2;
+            updateDisp(str2);
         }
         
       }
@@ -59,15 +61,11 @@ class NumberPanel extends React.Component {
         function c2(){
           if(activeStr == "str_1"){
             str1 +='2';
-            console.log(str1);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str1;
+            updateDisp(str1);
           }
           else{
             str2+= '2';
-            console.log(str2);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str2;
+            updateDisp(str2);
           }
         
       }
@@ -75,15 +73,11 @@ class NumberPanel extends React.Component {
         function c3(){
           if(activeStr == "str_1"){
             str1 +='3';
-            console.log(str1);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str1;
+            updateDisp(str1);
           }
           else{
             str2+= '3';
-            console.log(str2);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str2;
+            updateDisp(str2);
           }
         
       }
@@ -91,15 +85,11 @@ class NumberPanel extends React.Component {
         function c4(){
           if(activeStr == "str_1"){
             str1 +='4';
-            console.log(str1);
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= str1;
+            updateDisp(str1);
           }
         else{
           str2+= '4';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -107,15 +97,11 @@ class NumberPanel extends React.Component {
       function c5(){
         if(activeStr == "str_1"){
           str1 +='5';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '5';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -123,15 +109,11 @@ class NumberPanel extends React.Component {
       function c6(){
         if(activeStr == "str_1"){
           str1 +='6';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '6';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -139,15 +121,11 @@ class NumberPanel extends React.Component {
       function c7(){
         if(activeStr == "str_1"){
           str1 +='7';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '7';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -155,15 +133,11 @@ class NumberPanel extends React.Component {
       function c8(){
         if(activeStr == "str_1"){
           str1 +='8';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '8';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -171,15 +145,11 @@ class NumberPanel extends React.Component {
       function c9(){
         if(activeStr == "str_1"){
           str1 +='9';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '9';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
@@ -187,29 +157,23 @@ class NumberPanel extends React.Component {
       function c0(){
         if(activeStr == "str_1"){
           str1 +='0';
-          console.log(str1);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str1;
+          updateDisp(str1);
         }
         else{
           str2+= '0';
-          console.log(str2);
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= str2;
+          updateDisp(str2);
         }
         
       }
 
 
       function CE(){
-        let ta = document.getElementById("outputtext");
-        ta.innerHTML= 0;
+        updateDisp(0);
       }
       
       function ClearOutput(){
         str1 = '';
         str2 = '';
-        console.log("Str1 cleared " + str1);
         activeStr = "str_1";
       }
       
@@ -221,10 +185,8 @@ class NumberPanel extends React.Component {
         
         if(minusButtonPushed){
               res = int_1 - int_2;
-              console.log(res);
               
-              let ta = document.getElementById("outputtext");
-              ta.innerHTML= res;
+              updateDisp(res);
               
               str1 = '';
               str2 = '';
@@ -234,10 +196,8 @@ class NumberPanel extends React.Component {
         
         if(plusButtonPushed){
             res = int_1 + int_2;
-            console.log(res);
             
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= res;
+            updateDisp(res);
             
             str1 = '';
             str2 = '';
@@ -247,10 +207,8 @@ class NumberPanel extends React.Component {
         
         if(timesButtonPushed){
           res = int_1 * int_2;
-          console.log(res);
           
-          let ta = document.getElementById("outputtext");
-          ta.innerHTML= res;
+          updateDisp(res);
           
           str1 = '';
           str2 = '';
@@ -264,16 +222,13 @@ class NumberPanel extends React.Component {
             alert("Ei kovin mielellään");
             ClearOutput();
             
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= "Math error";
+            updateDisp("Math error");
             return;
           }
           else{
             res = int_1 / int_2;
-            console.log(res);
             
-            let ta = document.getElementById("outputtext");
-            ta.innerHTML= res;
+            updateDisp(res);
             str1 = '';
             str2 = '';
           }
@@ -368,9 +323,9 @@ ReactDOM.render(
     return(
     <div>
        <svg width="340" height="110">
-        <rect id ="output"  width="320" height="110" style={{fill: 'blue'}}>
+        <rect id ="output"  width="320" height="110" style={{fill: 'blue', border: '2px'}}>
         </rect>
-        <text id = "outputtext" x="20" y="100" fontFamily="Arial" fontSize="20" fill="white" ></text>
+        <text id = "outputtext" x="20" y="90" fontFamily="Arial" fontSize="30" fill="white" ></text>
       </svg>
     </div>
       );
